@@ -24,10 +24,10 @@ document.addEventListener("mouseleave", function () {
 });
 
 const svgFiles = [
-  "img/h21readme-typing-svg.herokuapp.svg",
-  "img/h22readme-typing-svg.herokuapp.svg",
-  "img/h23readme-typing-svg.herokuapp.svg",
-  "img/h24readme-typing-svg.herokuapp.svg",
+  "src/img/h21readme-typing-svg.herokuapp.svg",
+  "src/img/h22readme-typing-svg.herokuapp.svg",
+  "src/img/h23readme-typing-svg.herokuapp.svg",
+  "src/img/h24readme-typing-svg.herokuapp.svg",
 ];
 
 // Get the rotatingSVG element
