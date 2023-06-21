@@ -49,7 +49,7 @@ function loadAboutSection() {
   const aboutBox = new WinBox({
     title: "About Me",
     width: "400px",
-    height: "675px",
+    height: "600px",
     top: 80,
     right: 50,
     bottom: 50,
@@ -160,6 +160,24 @@ personal.addEventListener("click", () => {
     bottom: 25,
     left: 800,
     mount: personalContent,
+    onfocus: function () {
+      this.setBackground("#00aa00");
+    },
+    onblur: function () {
+      this.setBackground("#777");
+    },
+  });
+});
+
+const game = document.querySelector("#game");
+const gameContent = document.querySelector("#game-content");
+
+game.addEventListener("click", () => {
+  const gameBox = new WinBox({
+    title: "JSRL - LC",
+    url: "https://finegreat.github.io/JSRL/",
+    width: "85%",
+    height: "90%",
     onfocus: function () {
       this.setBackground("#00aa00");
     },
