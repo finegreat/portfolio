@@ -95,8 +95,10 @@ function loadPersonalSection() {
   }
 }
 
-window.addEventListener("load", loadAboutSection);
-window.addEventListener("load", loadPersonalSection);
+if (!isMobile()) {
+  window.addEventListener("load", loadAboutSection);
+  window.addEventListener("load", loadPersonalSection);
+}
 
 about.addEventListener("click", () => {
   const aboutBox = new WinBox({
