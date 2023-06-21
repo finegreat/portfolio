@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap");
 
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   padding: 0;
   margin: 0;
 }
@@ -130,7 +130,6 @@ nav ul li:hover {
 .container {
   max-width: 600px;
   margin: auto;
-  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -240,4 +239,119 @@ nav ul li:hover {
   margin-right: 10px;
   max-width: 250px;
   max-height: 250px;
+}
+
+@media (max-width: 600px) {
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    letter-spacing: normal;
+  }
+
+  .spotlight {
+    display: none;
+  }
+
+  #svg-container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #rotatingSVG {
+    display: block;
+    margin: 0 auto;
+    position: static;
+    transform: none;
+    max-width: 100%;
+    padding-left: 15%;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 0.5rem;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  nav {
+    display: flex;
+    width: auto;
+    margin: 0.25rem;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin: 1rem;
+  }
+
+  nav li {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.5rem;
+  }
+
+  .spotlight {
+    height: 200px;
+  }
+
+  .process .box {
+    flex-direction: column;
+  }
+  .process .box img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .contact-form-container {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    margin: 0 auto;
+  }
+
+  .input-field,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-wrapper img {
+    max-width: 100%;
+  }
+
+  /* Hide the horizontal scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }

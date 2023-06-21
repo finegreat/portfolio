@@ -45,46 +45,55 @@ function rotateSVG() {
 // Call the rotateSVG function every 3000ms
 setInterval(rotateSVG, 3000);
 
+function isMobile() {
+  return window.innerWidth <= 600;
+}
+
 function loadAboutSection() {
-  const aboutBox = new WinBox({
-    title: "About Me",
-    width: "400px",
-    height: "600px",
-    top: 80,
-    right: 50,
-    bottom: 50,
-    left: 25,
-    // x: "center",
-    // y: "center",
-    mount: aboutContent,
-    onfocus: function () {
-      this.setBackground("#00aa00");
-    },
-    onblur: function () {
-      this.setBackground("#777");
-    },
-  });
+    if (isMobile() = false) {
+    const aboutBox = new WinBox({
+      title: "About Me",
+      width: isMobile() ? "100%" : "400px",
+      height: isMobile() ? "100%" : "600px",
+      top: 80,
+      right: 50,
+      bottom: 50,
+      left: 25,
+      x: isMobile() ? 0 : 25,
+      y: isMobile() ? 0 : 80,
+      mount: aboutContent,
+      onfocus: function () {
+        this.setBackground("#00aa00");
+      },
+      onblur: function () {
+        this.setBackground("#777");
+      },
+    });
+  }
 }
 
 function loadPersonalSection() {
-  const personalBox = new WinBox({
-    title: "Personal Profile",
-    width: "600px",
-    height: "400px",
-    top: 350,
-    right: 25,
-    bottom: 25,
-    left: 800,
-    // x: "center",
-    // y: "center",
-    mount: personalContent,
-    onfocus: function () {
-      this.setBackground("#00aa00");
-    },
-    onblur: function () {
-      this.setBackground("#777");
-    },
-  });
+  if (isMobile() = false) {
+    const personalBox = new WinBox({
+      title: "Personal Profile",
+      width: "600px",
+      height: "400px",
+      top: 350,
+      right: 25,
+      bottom: 25,
+      left: 800,
+      x: 25,
+      y: 80,
+      mount: personalContent,
+      onfocus: function () {
+        this.setBackground("#00aa00");
+      },
+      onblur: function () {
+        this.setBackground("#777");
+      },
+      
+    });
+  }
 }
 
 window.addEventListener("load", loadAboutSection);
@@ -93,9 +102,9 @@ window.addEventListener("load", loadPersonalSection);
 about.addEventListener("click", () => {
   const aboutBox = new WinBox({
     title: "About Me",
-    width: "400px",
-    height: "675px",
-    top: 85,
+    width: isMobile() ? "100%" : "400px",
+    height: isMobile() ? "100%" : "675px",
+    top: isMobile() ? 30 : 85,
     right: 50,
     bottom: 50,
     left: 30,
@@ -114,12 +123,12 @@ about.addEventListener("click", () => {
 contact.addEventListener("click", () => {
   const contactBox = new WinBox({
     title: "Contact Me",
-    width: "400px",
-    height: "650px",
-    top: 75,
+    width: isMobile() ? "100%" : "400px",
+    height: isMobile() ? "100%" : "650px",
+    top: isMobile() ? 30 : 75,
     right: 25,
-    bottom: 250,
-    left: 900,
+    bottom: isMobile() ? 10: 250,
+    left: isMobile() ? 10 : 900,
     mount: contactContent,
     onfocus: function () {
       this.setBackground("#00aa00");
@@ -134,12 +143,12 @@ contact.addEventListener("click", () => {
 project.addEventListener("click", () => {
   const ProjectBox = new WinBox({
     title: "My Projects",
-    width: "400px",
-    height: "500px",
-    top: 90,
+    width: isMobile() ? "100%" : "400px",
+    height: isMobile() ? "100%" : "500px",
+    top: isMobile() ? 30 : 90,
     right: 50,
     bottom: 25,
-    left: 50,
+    left: isMobile() ? 10: 50,
     mount: projectContent,
     onfocus: function () {
       this.setBackground("#00aa00");
@@ -153,12 +162,12 @@ project.addEventListener("click", () => {
 personal.addEventListener("click", () => {
   const personalBox = new WinBox({
     title: "Personal Profile",
-    width: "600px",
-    height: "400px",
-    top: 350,
-    right: 25,
-    bottom: 25,
-    left: 800,
+    width: isMobile() ? "75%" : "600px",
+    height: isMobile() ? "90%" : "400px",
+    top: isMobile() ? 10 : 350,
+    right: isMobile() ? 0 : 25,
+    bottom: isMobile() ? 0 : 25,
+    left: isMobile() ? 10 : 800,
     mount: personalContent,
     onfocus: function () {
       this.setBackground("#00aa00");
