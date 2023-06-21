@@ -50,7 +50,7 @@ function isMobile() {
 }
 
 function loadAboutSection() {
-    if (isMobile() = false) {
+  if (!isMobile()) {
     const aboutBox = new WinBox({
       title: "About Me",
       width: isMobile() ? "100%" : "400px",
@@ -73,17 +73,17 @@ function loadAboutSection() {
 }
 
 function loadPersonalSection() {
-  if (isMobile() = false) {
+  if (!isMobile()) {
     const personalBox = new WinBox({
       title: "Personal Profile",
       width: "600px",
-      height: "400px",
+      height: "100%",
       top: 350,
       right: 25,
       bottom: 25,
       left: 800,
-      x: 25,
-      y: 80,
+      // x: 25,
+      y: 300,
       mount: personalContent,
       onfocus: function () {
         this.setBackground("#00aa00");
@@ -91,7 +91,6 @@ function loadPersonalSection() {
       onblur: function () {
         this.setBackground("#777");
       },
-      
     });
   }
 }
@@ -127,7 +126,7 @@ contact.addEventListener("click", () => {
     height: isMobile() ? "100%" : "650px",
     top: isMobile() ? 30 : 75,
     right: 25,
-    bottom: isMobile() ? 10: 250,
+    bottom: isMobile() ? 10 : 250,
     left: isMobile() ? 10 : 900,
     mount: contactContent,
     onfocus: function () {
@@ -148,7 +147,7 @@ project.addEventListener("click", () => {
     top: isMobile() ? 30 : 90,
     right: 50,
     bottom: 25,
-    left: isMobile() ? 10: 50,
+    left: isMobile() ? 10 : 50,
     mount: projectContent,
     onfocus: function () {
       this.setBackground("#00aa00");
@@ -163,8 +162,8 @@ personal.addEventListener("click", () => {
   const personalBox = new WinBox({
     title: "Personal Profile",
     width: isMobile() ? "75%" : "600px",
-    height: isMobile() ? "90%" : "400px",
-    top: isMobile() ? 10 : 350,
+    height: isMobile() ? "90%" : "600px",
+    top: isMobile() ? 30 : 350,
     right: isMobile() ? 0 : 25,
     bottom: isMobile() ? 0 : 25,
     left: isMobile() ? 10 : 800,
