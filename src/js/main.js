@@ -81,9 +81,9 @@ function loadAboutSection() {
   if (!isMobile()) {
     const aboutBox = new WinBox({
       title: "About Me",
-      width: isMobile() ? "100%" : "400px",
-      height: isMobile() ? "100%" : "650px",
-      top: 80,
+      width: isMobile() ? "100%" : "25%",
+      height: "100%",
+      top: 50,
       right: 50,
       bottom: 50,
       left: 25,
@@ -132,7 +132,7 @@ about.addEventListener("click", () => {
   const aboutBox = new WinBox({
     title: "About Me",
     width: isMobile() ? "100%" : "400px",
-    height: isMobile() ? "100%" : "675px",
+    height: "100%",
     top: isMobile() ? 30 : 85,
     right: 50,
     bottom: 50,
@@ -211,7 +211,7 @@ skills.addEventListener("click", () => {
   const skillsBox = new WinBox({
     title: "My Skills",
     width: isMobile() ? "75%" : "100%",
-    height: isMobile() ? "90%" : "600px",
+    height: isMobile() ? "90%" : "100%",
     top: isMobile() ? 30 : 85,
     right: isMobile() ? 0 : 25,
     bottom: isMobile() ? 0 : 25,
