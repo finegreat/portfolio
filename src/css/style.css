@@ -261,7 +261,7 @@ nav ul li:hover {
   }
 
   #rotatingSVG {
-    display: block;
+    display: none;
     margin: 0 auto;
     position: static;
     transform: none;

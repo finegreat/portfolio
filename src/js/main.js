@@ -63,11 +63,13 @@ const rotatingSVG = document.getElementById("rotatingSVG");
 
 // Function to rotate the SVG
 function rotateSVG() {
-  const currentFile = rotatingSVG.getAttribute("src");
-  const currentIndex = svgFiles.indexOf(currentFile);
-  const nextIndex = (currentIndex + 1) % svgFiles.length;
-  const nextFile = svgFiles[nextIndex];
-  rotatingSVG.setAttribute("src", nextFile);
+  if (!isMobile()) {
+    const currentFile = rotatingSVG.getAttribute("src");
+    const currentIndex = svgFiles.indexOf(currentFile);
+    const nextIndex = (currentIndex + 1) % svgFiles.length;
+    const nextFile = svgFiles[nextIndex];
+    rotatingSVG.setAttribute("src", nextFile);
+  }
 }
 
 // Call the rotateSVG function every 3000ms
@@ -81,11 +83,11 @@ function loadAboutSection() {
   if (!isMobile()) {
     const aboutBox = new WinBox({
       title: "About Me",
-      width: isMobile() ? "100%" : "25%",
-      height: "100%",
+      width: "25%",
+      height: "97.5%",
       top: 50,
       right: 50,
-      bottom: 50,
+      bottom: 25,
       left: 25,
       x: isMobile() ? 0 : 25,
       y: isMobile() ? 0 : 80,
@@ -131,11 +133,12 @@ if (!isMobile()) {
 about.addEventListener("click", () => {
   const aboutBox = new WinBox({
     title: "About Me",
-    width: isMobile() ? "100%" : "400px",
-    height: "100%",
+    width: isMobile() ? "75%" : "100%",
+    height: isMobile() ? "90%" : "400px",
     top: isMobile() ? 30 : 85,
-    right: 50,
-    bottom: 50,
+    right: isMobile() ? 0 : 25,
+    bottom: isMobile() ? 0 : 10,
+    left: isMobile() ? 10 : "65%",
     left: 30,
     // x: "center",
     // y: "center",
