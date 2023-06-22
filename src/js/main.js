@@ -133,8 +133,8 @@ if (!isMobile()) {
 about.addEventListener("click", () => {
   const aboutBox = new WinBox({
     title: "About Me",
-    width: isMobile() ? "75%" : "100%",
-    height: isMobile() ? "90%" : "400px",
+    width: isMobile() ? "80%" : "25%",
+    height: isMobile() ? "95%" : "100%",
     top: isMobile() ? 30 : 85,
     right: isMobile() ? 0 : 25,
     bottom: isMobile() ? 0 : 10,
