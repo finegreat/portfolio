@@ -1,9 +1,9 @@
 <!-- https://github.com/DenverCoder1/readme-typing-svg/ -->
 <svg xmlns='http://www.w3.org/2000/svg'
     xmlns:xlink='http://www.w3.org/1999/xlink'
-    viewBox='0 0 435 50'
+    viewBox='0 0 400 50'
     style='background-color: #00000000;'
-    width='435px' height='50px'>
+    width='400px' height='50px'>
 
     <style>
 @font-face {
@@ -18,12 +18,12 @@
                 <path id='path0'>
                             <!-- Single line -->
                                 <animate id='d0' attributeName='d' begin='0s;d0.end'
-                    dur='3000ms' fill='remove'
-                    values='m0,25 h0 ; m0,25 h435 ; m0,25 h435 ; m0,25 h0' keyTimes='0;0.77333333333333;0.80666666666667;1' />
+                    dur='6000ms' fill='remove'
+                    values='m0,25 h0 ; m0,25 h400 ; m0,25 h400 ; m0,25 h0' keyTimes='0;0.66666666666667;0.83333333333333;1' />
                     </path>
-    <text font-family='"VT323", monospace' fill='#FFCC00' font-size='25'
-        dominant-baseline='auto'
-        x='0%' text-anchor='start'>
+    <text font-family='"VT323", monospace' fill='#FFCC00' font-size='24'
+        dominant-baseline='middle'
+        x='50%' text-anchor='middle'>
         <textPath xlink:href='#path0'>
             software engineer,
         </textPath>

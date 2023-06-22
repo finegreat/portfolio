@@ -254,16 +254,8 @@ nav ul li:hover {
   }
 
   #svg-container {
-    display: flex;
+    position: absolute;
     justify-content: center;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  #svg-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     max-width: 100%;
     box-sizing: border-box;
   }

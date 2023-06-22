@@ -4,12 +4,14 @@ const about = document.querySelector("#about");
 const contact = document.querySelector("#contact");
 const project = document.querySelector("#project");
 const personal = document.querySelector("#personal");
+const skills = document.querySelector("#skills");
 
 // edit contain 2
 const aboutContent = document.querySelector("#about-content");
 const contactContent = document.querySelector("#contact-content");
 const projectContent = document.querySelector("#project-content");
 const personalContent = document.querySelector("#personal-content");
+const skillsContent = document.querySelector("#skills-content");
 
 document.addEventListener("mousemove", function (e) {
   var spotlight = document.querySelector(".spotlight");
@@ -22,6 +24,32 @@ document.addEventListener("mouseleave", function () {
   var spotlight = document.querySelector(".spotlight");
   spotlight.style.opacity = 0;
 });
+
+$.fn.typewriter = function () {
+  this.each(function () {
+    var c = $(this),
+      b = c.html(),
+      a = 0,
+      d = 0;
+    c.html("");
+    var e = function () {
+      if ("<" == b.substring(a, a + 1)) {
+        var f = new RegExp(/<span class="instant"/),
+          g = new RegExp(/<span class="clear"/);
+        if (b.substring(a, b.length).match(f))
+          a += b.substring(a, b.length).indexOf("</span>") + 7;
+        else if (b.substring(a, b.length).match(g))
+          (d = a), (a += b.substring(a, b.length).indexOf("</span>") + 7);
+        else for (; ">" != b.substring(a, a + 1); ) a++;
+      }
+      c.html(b.substring(d, a++) + (a & 1 ? "_" : ""));
+      a >= b.length || setTimeout(e, 70 + 100 * Math.random());
+    };
+    e();
+  });
+  return this;
+};
+$(".terminal").typewriter();
 
 const svgFiles = [
   "src/img/h21readme-typing-svg.herokuapp.svg",
@@ -43,7 +71,7 @@ function rotateSVG() {
 }
 
 // Call the rotateSVG function every 3000ms
-setInterval(rotateSVG, 3000);
+setInterval(rotateSVG, 6000);
 
 function isMobile() {
   return window.innerWidth <= 600;
@@ -54,7 +82,7 @@ function loadAboutSection() {
     const aboutBox = new WinBox({
       title: "About Me",
       width: isMobile() ? "100%" : "400px",
-      height: isMobile() ? "100%" : "600px",
+      height: isMobile() ? "100%" : "650px",
       top: 80,
       right: 50,
       bottom: 50,
@@ -72,32 +100,32 @@ function loadAboutSection() {
   }
 }
 
-function loadPersonalSection() {
-  if (!isMobile()) {
-    const personalBox = new WinBox({
-      title: "Personal Profile",
-      width: "600px",
-      height: "100%",
-      top: 350,
-      right: 25,
-      bottom: 25,
-      left: 800,
-      // x: 25,
-      y: 300,
-      mount: personalContent,
-      onfocus: function () {
-        this.setBackground("#00aa00");
-      },
-      onblur: function () {
-        this.setBackground("#777");
-      },
-    });
-  }
-}
+// function loadPersonalSection() {
+//   if (!isMobile()) {
+//     const personalBox = new WinBox({
+//       title: "Personal Profile",
+//       width: "600px",
+//       height: "100%",
+//       top: 350,
+//       right: 25,
+//       bottom: 25,
+//       left: 800,
+//       // x: 25,
+//       y: 300,
+//       mount: personalContent,
+//       onfocus: function () {
+//         this.setBackground("#00aa00");
+//       },
+//       onblur: function () {
+//         this.setBackground("#777");
+//       },
+//     });
+//   }
+// }
 
 if (!isMobile()) {
   window.addEventListener("load", loadAboutSection);
-  window.addEventListener("load", loadPersonalSection);
+  // window.addEventListener("load", loadPersonalSection);
 }
 
 about.addEventListener("click", () => {
@@ -129,7 +157,7 @@ contact.addEventListener("click", () => {
     top: isMobile() ? 30 : 75,
     right: 25,
     bottom: isMobile() ? 10 : 250,
-    left: isMobile() ? 10 : 900,
+    left: isMobile() ? 10 : "70%",
     mount: contactContent,
     onfocus: function () {
       this.setBackground("#00aa00");
@@ -144,8 +172,8 @@ contact.addEventListener("click", () => {
 project.addEventListener("click", () => {
   const ProjectBox = new WinBox({
     title: "My Projects",
-    width: isMobile() ? "100%" : "400px",
-    height: isMobile() ? "100%" : "500px",
+    width: isMobile() ? "100%" : "50%",
+    height: isMobile() ? "100%" : "70%",
     top: isMobile() ? 30 : 90,
     right: 50,
     bottom: 25,
@@ -168,8 +196,27 @@ personal.addEventListener("click", () => {
     top: isMobile() ? 30 : 350,
     right: isMobile() ? 0 : 25,
     bottom: isMobile() ? 0 : 25,
-    left: isMobile() ? 10 : 800,
+    left: isMobile() ? 10 : "60%",
     mount: personalContent,
+    onfocus: function () {
+      this.setBackground("#00aa00");
+    },
+    onblur: function () {
+      this.setBackground("#777");
+    },
+  });
+});
+
+skills.addEventListener("click", () => {
+  const skillsBox = new WinBox({
+    title: "My Skills",
+    width: isMobile() ? "75%" : "100%",
+    height: isMobile() ? "90%" : "600px",
+    top: isMobile() ? 30 : 85,
+    right: isMobile() ? 0 : 25,
+    bottom: isMobile() ? 0 : 25,
+    left: isMobile() ? 10 : "65%",
+    mount: skillsContent,
     onfocus: function () {
       this.setBackground("#00aa00");
     },
