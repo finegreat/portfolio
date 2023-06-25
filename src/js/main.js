@@ -63,7 +63,10 @@ const rotatingSVG = document.getElementById("rotatingSVG");
 
 // Function to rotate the SVG
 function rotateSVG() {
-  if (!isMobile() && window.location.pathname == "/index") {
+  if (
+    !isMobile() &&
+    window.location.pathname == "https://finegreat.github.io/portfolio/"
+  ) {
     const currentFile = rotatingSVG.getAttribute("src");
     const currentIndex = svgFiles.indexOf(currentFile);
     const nextIndex = (currentIndex + 1) % svgFiles.length;
