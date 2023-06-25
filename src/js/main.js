@@ -51,33 +51,6 @@ $.fn.typewriter = function () {
 };
 $(".terminal").typewriter();
 
-const svgFiles = [
-  "src/img/h21readme-typing-svg.herokuapp.svg",
-  "src/img/h22readme-typing-svg.herokuapp.svg",
-  "src/img/h23readme-typing-svg.herokuapp.svg",
-  "src/img/h24readme-typing-svg.herokuapp.svg",
-];
-
-// Get the rotatingSVG element
-const rotatingSVG = document.getElementById("rotatingSVG");
-
-// Function to rotate the SVG
-function rotateSVG() {
-  if (
-    !isMobile() &&
-    window.location.pathname == "https://finegreat.github.io/portfolio/"
-  ) {
-    const currentFile = rotatingSVG.getAttribute("src");
-    const currentIndex = svgFiles.indexOf(currentFile);
-    const nextIndex = (currentIndex + 1) % svgFiles.length;
-    const nextFile = svgFiles[nextIndex];
-    rotatingSVG.setAttribute("src", nextFile);
-  }
-}
-
-// Call the rotateSVG function every 3000ms
-setInterval(rotateSVG, 6000);
-
 function isMobile() {
   return window.innerWidth <= 600;
 }
@@ -88,12 +61,12 @@ function loadAboutSection() {
       title: "About Me",
       width: "25%",
       height: "97.5%",
-      top: 50,
+      top: 25,
       right: 50,
       bottom: 25,
       left: 25,
       x: isMobile() ? 0 : 25,
-      y: isMobile() ? 0 : 80,
+      y: isMobile() ? 0 : 50,
       mount: aboutContent,
       onfocus: function () {
         this.setBackground("#00aa00");
@@ -160,7 +133,7 @@ contact.addEventListener("click", () => {
     title: "Contact Me",
     width: isMobile() ? "100%" : "400px",
     height: isMobile() ? "100%" : "650px",
-    top: isMobile() ? 30 : 75,
+    top: isMobile() ? 30 : 25,
     right: 25,
     bottom: isMobile() ? 10 : 250,
     left: isMobile() ? 10 : "70%",
@@ -199,8 +172,8 @@ personal.addEventListener("click", () => {
   const personalBox = new WinBox({
     title: "Personal Profile",
     width: isMobile() ? "75%" : "600px",
-    height: isMobile() ? "90%" : "600px",
-    top: isMobile() ? 30 : 350,
+    height: isMobile() ? "90%" : "100%",
+    top: isMobile() ? 30 : 225,
     right: isMobile() ? 0 : 25,
     bottom: isMobile() ? 0 : 25,
     left: isMobile() ? 10 : "60%",
@@ -219,7 +192,7 @@ skills.addEventListener("click", () => {
     title: "My Skills",
     width: isMobile() ? "75%" : "100%",
     height: isMobile() ? "90%" : "100%",
-    top: isMobile() ? 30 : 85,
+    top: isMobile() ? 30 : 25,
     right: isMobile() ? 0 : 25,
     bottom: isMobile() ? 0 : 25,
     left: isMobile() ? 10 : "65%",
