@@ -63,7 +63,7 @@ const rotatingSVG = document.getElementById("rotatingSVG");
 
 // Function to rotate the SVG
 function rotateSVG() {
-  if (!isMobile()) {
+  if (!isMobile() && window.location.pathname == "/index") {
     const currentFile = rotatingSVG.getAttribute("src");
     const currentIndex = svgFiles.indexOf(currentFile);
     const nextIndex = (currentIndex + 1) % svgFiles.length;
@@ -173,22 +173,23 @@ contact.addEventListener("click", () => {
 
 // edit contain 3
 project.addEventListener("click", () => {
-  const ProjectBox = new WinBox({
-    title: "My Projects",
-    width: isMobile() ? "100%" : "50%",
-    height: isMobile() ? "100%" : "70%",
-    top: isMobile() ? 30 : 90,
-    right: 50,
-    bottom: 25,
-    left: isMobile() ? 10 : 50,
-    mount: projectContent,
-    onfocus: function () {
-      this.setBackground("#00aa00");
-    },
-    onblur: function () {
-      this.setBackground("#777");
-    },
-  });
+  window.open("https://finegreat.github.io/portfolio/projects", "_self");
+  // const ProjectBox = new WinBox({
+  //   title: "My Projects",
+  //   width: isMobile() ? "100%" : "50%",
+  //   height: isMobile() ? "100%" : "70%",
+  //   top: isMobile() ? 30 : 90,
+  //   right: 50,
+  //   bottom: 25,
+  //   left: isMobile() ? 10 : 50,
+  //   mount: projectContent,
+  //   onfocus: function () {
+  //     this.setBackground("#00aa00");
+  //   },
+  //   onblur: function () {
+  //     this.setBackground("#777");
+  //   },
+  // });
 });
 
 personal.addEventListener("click", () => {
