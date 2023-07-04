@@ -41,23 +41,43 @@
       <main class="crt">
         <div class="spotlight"></div>
 
-        <div class="terminal">
+        <div>
           <span>
             \ (•◡•) / hey! i'm Lewis, a software engineering student, based in
             Sheffield.<br /><br
           /></span>
+          <div id="quote"></div>
+          <a href="#" onclick="generateQuote()"
+            >click here for some random techy jargon i could've said:</a
+          >
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script>
+            function generateQuote() {
+              $.ajax({
+                url: "https://techy-api.vercel.app/api/text",
+                type: "GET",
+                success: function (data) {
+                  $("#quote").text(data);
+                },
+              });
+            }
+          </script>
+          <br />
+          <br />
           <span class="dollar">
             always learning and expanding my skillset, i love taking on new
             projects and familiarising myself with new technologies.<br
           /></span>
           <span class="dollar"
             >when i'm not buried in my screen, i am often reading, gaming, or
-            lost in the peaks<br />
+            lost in the peaks...<br />
           </span>
           <span class="dollar"
-            >read more about me, or contact me above<br /><br
+            >read more about me, or contact me above with the links above<br /><br
           /></span>
-          <span class="dollar">thank you for visiting (✿´‿`)</span>
+          <div class="terminal">
+            <span class="dollar">thank you for visiting (✿´‿`)</span>
+          </div>
         </div>
       </main>
     </div>

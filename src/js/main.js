@@ -209,20 +209,22 @@ skills.addEventListener("click", () => {
 const game = document.querySelector("#game");
 const gameContent = document.querySelector("#game-content");
 
-game.addEventListener("click", () => {
-  const gameBox = new WinBox({
-    title: "JSRL - LC",
-    url: "https://finegreat.github.io/JSRL/",
-    width: "85%",
-    height: "90%",
-    onfocus: function () {
-      this.setBackground("#00aa00");
-    },
-    onblur: function () {
-      this.setBackground("#777");
-    },
+if (game) {
+  game.addEventListener("click", () => {
+    const gameBox = new WinBox({
+      title: "JSRL - LC",
+      url: "https://finegreat.github.io/JSRL/",
+      width: "85%",
+      height: "90%",
+      onfocus: function () {
+        this.setBackground("#00aa00");
+      },
+      onblur: function () {
+        this.setBackground("#777");
+      },
+    });
   });
-});
+}
 
 const images = document.querySelectorAll(".fade-in");
 let currentImageIndex = 0;
